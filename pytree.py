@@ -22,8 +22,8 @@ def gettree(arg, branch):
             if (i == len(dirs) - 1):
                 print(branch + '└── ' + filename)
             else:
-                print(branch + '├── ' + filename)        
-
+                print(branch + '├── ' + filename)
+                
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         root = os.getcwd()
