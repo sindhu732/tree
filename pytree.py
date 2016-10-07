@@ -37,7 +37,7 @@ def gettree(arg, branch):
             else:
                 print(branch + '├── ' + dirs[i])
                 total_files += 1
-                
+
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         root = '.'
