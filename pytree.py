@@ -7,22 +7,19 @@ def gettree(arg, branch):
     dirs = sorted(os.listdir(arg))
 
     for i in range(0, len(dirs)):
-        path = arg + dirs[i]
-        if path[-1] != '/':
-            path_slash = path + '/'
-        filename = os.path.split(path)[-1]
+        path = os.path.join(arg, dirs[i])
         if os.path.isdir(path):
             if (i == len(dirs) - 1):
-                print(branch + '└── ' + filename)
-                gettree(path_slash, branch + '    ')
+                print(branch + '└── ' + dirs[i])
+                gettree(path, branch + '    ')
             else:
-                print(branch + '├── ' + filename)
-                gettree(path_slash, branch + '│   ')
+                print(branch + '├── ' + dirs[i])
+                gettree(path, branch + '│   ')
         else:
             if (i == len(dirs) - 1):
-                print(branch + '└── ' + filename)
+                print(branch + '└── ' + dirs[i])
             else:
-                print(branch + '├── ' + filename)        
+                print(branch + '├── ' + dirs[i])        
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
